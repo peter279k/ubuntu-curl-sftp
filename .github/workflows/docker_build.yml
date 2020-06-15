@@ -1,0 +1,15 @@
+name: CI build
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build Docker image for cURL with SFTP support
+        run: docker build -t ubuntu-curl-sftp .
