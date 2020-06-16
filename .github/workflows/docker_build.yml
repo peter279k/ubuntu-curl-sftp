@@ -11,4 +11,4 @@ jobs:
       - name: Build Docker image for cURL with SFTP support
         run: docker build -t ubuntu-curl-sftp .
       - name: Tests cURL command is ebabled for SFTP support
-        run:  docker run ubuntu-curl-sftp bash -c "curl -V | grep sftp" && [[ $(echo $?) == 1 ]] && exit 1;
+        run:  docker run ubuntu-curl-sftp bash -c "curl -V | grep sftp"
